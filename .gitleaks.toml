@@ -1,0 +1,7 @@
+title = "Secret scanning"
+
+[[rules]]
+id = "aws-secret-key"
+description = "AWS secret key"
+regex = '''AWS_SECRET_KEY\s*=\s*["'][^"']+["']'''
+keywords = ["AWS_SECRET_KEY"]
