@@ -1,0 +1,40 @@
+Run started:2026-09-22 13:48:11.232265+00:00
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '123456789'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
+   Location: .\vulnerable_app.py:3:13
+2	
+3	SECRET_KEY = "123456789"
+4	user_input = input("Cmd: ")
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
+   Severity: High   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html
+   Location: .\vulnerable_app.py:5:0
+4	user_input = input("Cmd: ")
+5	os.system(user_input)
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 4
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 0
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 1
+Files skipped (0):
